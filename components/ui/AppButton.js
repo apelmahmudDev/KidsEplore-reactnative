@@ -2,10 +2,11 @@ import { Button, makeStyles } from "@rneui/base";
 import { Image } from "react-native";
 import React from "react";
 
-const AppButton = ({ label, icon, color }) => {
+const AppButton = ({ onPress, label, icon, color }) => {
 	const styles = useStyles();
 	return (
 		<Button
+			onPress={onPress}
 			color={color}
 			buttonStyle={styles.detailsBtn}
 			titleStyle={{

@@ -1,7 +1,7 @@
 import { View, Text, ImageBackground, Image } from "react-native";
 import { makeStyles, Button, Icon } from "@rneui/base";
 
-const Home = () => {
+const Home = ({ navigation }) => {
 	const styles = useStyles();
 
 	return (
@@ -15,6 +15,7 @@ const Home = () => {
 				<Image style={styles.kidsIcon} source={require("../assets/kids.png")} />
 				{/* play  button -> */}
 				<Button
+					onPress={() => navigation.navigate("Category")}
 					buttonStyle={styles.explorBtn}
 					titleStyle={{
 						fontWeight: "bold",

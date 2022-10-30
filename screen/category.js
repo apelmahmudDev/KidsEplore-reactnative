@@ -8,7 +8,7 @@ const fishIcon = require("../assets/category/fish.png");
 const flowerIcon = require("../assets/category/flower.png");
 const animalIcon = require("../assets/category/lion.png");
 
-const Category = () => {
+const Category = ({ navigation }) => {
 	const styles = useStyles();
 
 	return (
@@ -19,7 +19,12 @@ const Category = () => {
 				resizeMode="cover"
 			>
 				{/* category button -> */}
-				<AppButton icon={furitsIcon} label="Fruits" color="primary" />
+				<AppButton
+					onPress={() => navigation.navigate("Details")}
+					icon={furitsIcon}
+					label="Fruits"
+					color="primary"
+				/>
 				<AppButton icon={fishIcon} label="Fishes" color="secondary" />
 				<AppButton icon={flowerIcon} label="Flowers" color="error" />
 				<AppButton icon={animalIcon} label="Animals" color="success" />
