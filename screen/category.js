@@ -17,7 +17,7 @@ const Category = ({ navigation }) => {
 				{categoryData.map((item) => (
 					<AppButton
 						key={item.id}
-						onPress={() => navigation.navigate("Details")}
+						onPress={() => navigation.navigate("Details", { catId: item.id })}
 						icon={item.icon}
 						label={item.category}
 						color={item.color}

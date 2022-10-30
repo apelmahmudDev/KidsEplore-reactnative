@@ -1,10 +1,20 @@
 import { View, ImageBackground, ScrollView } from "react-native";
 import { AppCard } from "../components/common";
 import { makeStyles } from "@rneui/base";
-import { catagoryData } from "../assets/data";
+import { categoryData } from "../assets/data";
+import React, { useState, useEffect } from "react";
 
-const Details = () => {
+const Details = ({ route, navigation }) => {
 	const styles = useStyles();
+	const [data, setData] = useState([]);
+	const { catId } = route.params;
+
+	useEffect(() => {
+		if (catId) {
+			const findedItem = categoryData.find((item) => item.id === catId);
+			setData(findedItem);
+		}
+	}, [catId]);
 
 	return (
 		<View style={styles.container}>
@@ -18,13 +28,14 @@ const Details = () => {
 					showsHorizontalScrollIndicator={false}
 				>
 					{/* details of category -> */}
-					<AppCard
-						image={require("../assets/category/fruits/apple.png")}
-						name="Apple"
-						description="An apple is an edible fruit produced by an apple tree. Apple
-								trees are cultivated worldwide and are the most widely grown
-								species in the genus Malus. The tree originated in Central Asia."
-					/>
+					{data?.data?.map((item) => (
+						<AppCard
+							key={item.id}
+							image={item.image}
+							name={item.name}
+							description={item.description}
+						/>
+					))}
 				</ScrollView>
 			</ImageBackground>
 		</View>
