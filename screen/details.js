@@ -1,5 +1,7 @@
-import { View, ImageBackground, Image, ScrollView } from "react-native";
-import { makeStyles, Text } from "@rneui/base";
+import { View, ImageBackground, ScrollView } from "react-native";
+import { AppCard } from "../components/common";
+import { makeStyles } from "@rneui/base";
+import { catagoryData } from "../assets/data";
 
 const Details = () => {
 	const styles = useStyles();
@@ -16,46 +18,13 @@ const Details = () => {
 					showsHorizontalScrollIndicator={false}
 				>
 					{/* details of category -> */}
-					<View style={styles.card}>
-						<Image
-							style={{ height: 100, width: 100, resizeMode: "contain" }}
-							source={require("../assets/category/fruits/apple.png")}
-						/>
-
-						<View style={styles.descWrap}>
-							<Text h4>Apple</Text>
-							<Text
-								style={{
-									marginTop: 10,
-									color: "#0d0d0d",
-								}}
-							>
-								An apple is an edible fruit produced by an apple tree. Apple
+					<AppCard
+						image={require("../assets/category/fruits/apple.png")}
+						name="Apple"
+						description="An apple is an edible fruit produced by an apple tree. Apple
 								trees are cultivated worldwide and are the most widely grown
-								species in the genus Malus. The tree originated in Central Asia.
-							</Text>
-						</View>
-					</View>
-					<View style={styles.card}>
-						<Image
-							style={{ height: 100, width: 100, resizeMode: "contain" }}
-							source={require("../assets/category/fruits/apple.png")}
-						/>
-
-						<View style={styles.descWrap}>
-							<Text h4>Apple</Text>
-							<Text
-								style={{
-									marginTop: 10,
-									color: "#0d0d0d",
-								}}
-							>
-								An apple is an edible fruit produced by an apple tree. Apple
-								trees are cultivated worldwide and are the most widely grown
-								species in the genus Malus. The tree originated in Central Asia.
-							</Text>
-						</View>
-					</View>
+								species in the genus Malus. The tree originated in Central Asia."
+					/>
 				</ScrollView>
 			</ImageBackground>
 		</View>
@@ -74,17 +43,5 @@ const useStyles = makeStyles({
 		paddingHorizontal: 20,
 		paddingVertical: 10,
 		flex: 1,
-	},
-	card: {
-		marginVertical: 10,
-		backgroundColor: "#FFFFFF",
-		justifyContent: "center",
-		alignItems: "center",
-		padding: 10,
-		borderRadius: 10,
-	},
-	descWrap: {
-		alignItems: "center",
-		marginVertical: 15,
 	},
 });

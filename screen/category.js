@@ -1,12 +1,7 @@
-import { View, ImageBackground, Image } from "react-native";
+import { View, ImageBackground, Image, Text } from "react-native";
 import { makeStyles, Button } from "@rneui/base";
 import { AppButton } from "../components/ui";
-
-// icons
-const furitsIcon = require("../assets/category/fruits.png");
-const fishIcon = require("../assets/category/fish.png");
-const flowerIcon = require("../assets/category/flower.png");
-const animalIcon = require("../assets/category/lion.png");
+import { categoryData } from "../assets/data";
 
 const Category = ({ navigation }) => {
 	const styles = useStyles();
@@ -19,15 +14,15 @@ const Category = ({ navigation }) => {
 				resizeMode="cover"
 			>
 				{/* category button -> */}
-				<AppButton
-					onPress={() => navigation.navigate("Details")}
-					icon={furitsIcon}
-					label="Fruits"
-					color="primary"
-				/>
-				<AppButton icon={fishIcon} label="Fishes" color="secondary" />
-				<AppButton icon={flowerIcon} label="Flowers" color="error" />
-				<AppButton icon={animalIcon} label="Animals" color="success" />
+				{categoryData.map((item) => (
+					<AppButton
+						key={item.id}
+						onPress={() => navigation.navigate("Details")}
+						icon={item.icon}
+						label={item.category}
+						color={item.color}
+					/>
+				))}
 			</ImageBackground>
 		</View>
 	);
@@ -45,13 +40,5 @@ const useStyles = makeStyles({
 		flex: 1,
 		justifyContent: "center",
 		alignItems: "center",
-	},
-	detailsBtn: {
-		width: "100%",
-		padding: 8,
-		marginVertical: 8,
-		borderWidth: 1,
-		borderRadius: 30,
-		borderColor: "#ddd",
 	},
 });
