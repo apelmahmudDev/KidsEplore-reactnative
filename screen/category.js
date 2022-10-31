@@ -10,7 +10,7 @@ const Category = ({ navigation }) => {
 		<View style={styles.container}>
 			<ImageBackground
 				style={styles.background}
-				source={require("../assets/kids-bg.png")}
+				source={require("../assets/appbg.png")}
 				resizeMode="cover"
 			>
 				{/* category button -> */}

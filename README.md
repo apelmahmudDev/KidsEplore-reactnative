@@ -1,12 +1,21 @@
-## Kids Explore
+## Organism Explore
 
-## FEATHURES
+List of some organisms to demonstrate their benefits,
+something like: ⤵️
 
-- Homepage
+- Fruits
+- fishes
+- Animals
+- Flowers
 
-- Fruits list
-  - its detsils
-- Animal list
-  - its details
-- Flower
-  - its details
+## 🔨Technology used:
+
+- React Native,
+- React native element
+- React navigation
+
+## 📱Screen
+
+<img src="./assets/example/home-screen.jpg" alt="home-screen" width="180">
+<img src="./assets/example/category-screen.jpg" alt="category-screen" width="180">
+<img src="./assets/example/details-screen.jpg" alt="details-screen" width="180">

@@ -21,7 +21,7 @@ const Details = ({ route, navigation }) => {
 			<ImageBackground
 				resizeMode="cover"
 				style={styles.background}
-				source={require("../assets/kids-bg.png")}
+				source={require("../assets/appbg.png")}
 			>
 				<ScrollView
 					showsVerticalScrollIndicator={false}
